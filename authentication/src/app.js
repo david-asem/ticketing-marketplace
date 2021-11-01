@@ -6,7 +6,7 @@ const logoutRoute  = ('./routes/logoutRoute');
 const {registerRoute}  = require('./routes/registerRoute');
 const app = express();
 
-
+app.use(express.json());
 
 app.use('/api/v1/auth', registerRoute);
 //app.use(currentUserRoute);

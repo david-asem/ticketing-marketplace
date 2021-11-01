@@ -1,7 +1,11 @@
+//registeration function
 
-//register function
-function register(req, res) {
-  res.send('Hi');
+const register = (req, res, next) => {
+  const { email, password } = req.body;
+  console.log('creating user..')
+
+}
+module.exports = {
+  register,
 }
 
-module.exports = register;

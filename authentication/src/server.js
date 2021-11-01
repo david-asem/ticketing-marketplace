@@ -1,13 +1,14 @@
+const express = require('express');
 require("dotenv").config({ path: "./.env" });
-const http = require("http");
-const app = require("./app");
+const http = require('http');
+const app = require('./app');
 
-const PORT = process.env.PORT || 8000;
 
-//using inbuild nodejs module to create server.
+app.use(express.json());
+
+
+const PORT = process.env.PORT || 6000;
 const server = http.createServer(app);
-
-
 
 async function startServer() {
   //await mongoConnect();

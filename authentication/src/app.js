@@ -1,16 +1,17 @@
 const express = require('express');
-const { currentUserRouter, loginRouter, registerRouter, logoutRouter } = ('./routes/')
-//const cors = require("cors");
-//const path = require("path");
-
-//JSON parsing middleware
+require("dotenv").config({ path: "./.env" });
+const  currentUserRoute  = ('./routes/current-userRoute.js');
+const loginRoute = ('./routes/loginRoute');
+const logoutRoute  = ('./routes/logoutRoute');
+const {registerRoute}  = require('./routes/registerRoute');
 const app = express();
 
-app.use(express.json());
 
-app.use('/', currentUserRouter);
-app.use('/',loginRouter);
-app.use('/',logoutRouter);
-app.use('/',registerRouter);
+
+app.use('/api/v1/auth', registerRoute);
+//app.use(currentUserRoute);
+//app.use(loginRoute);
+//app.use(logoutRoute);
+
 
 module.exports = app;
